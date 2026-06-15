@@ -1,4 +1,4 @@
-# RestoGear — Website Company Profile + Dashboard Admin
+# KopiSenja — Website Company Profile + Dashboard Admin
 **Stack:** Vite + React 18 + Tailwind CSS + Supabase (Database + Auth + Storage)
 
 ---
