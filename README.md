@@ -175,4 +175,4 @@ npm run build
 
 ---
 
-*Made with ❤️ — RestoGear Company Profile*
+*Made with ❤️ — KopiSenja Company Profile*
