@@ -1,4 +1,4 @@
-# RestoGear — Website Company Profile + Dashboard Admin
+# KopiSenja — Website Company Profile + Dashboard Admin
 **Stack:** Vite + React 18 + Tailwind CSS + Supabase (Database + Auth + Storage)
 
 ---
@@ -175,4 +175,4 @@ npm run build
 
 ---
 
-*Made with ❤️ — RestoGear Company Profile*
+*Made with ❤️ — KopiSenja Company Profile*
