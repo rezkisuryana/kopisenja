@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/db
 /.pnp
 .pnp.*
 .yarn/*
@@ -32,10 +33,6 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
-
-#file sql
-MIGRATION_FIX.sql
-MIGRATION_KOPISINGLY.sql
 
 # vercel
 .vercel
