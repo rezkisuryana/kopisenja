@@ -31,20 +31,20 @@ export default function CategoriesPanel({ categories, products, onAdd, onUpdate,
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-charcoal-100">
+              <tr className="border-b border-cream-100">
                 {['Icon', 'Nama Kategori', 'Jumlah Produk', 'Aksi'].map(h => (
-                  <th key={h} className="px-6 py-3 text-left text-xs font-semibold text-charcoal-400 uppercase tracking-wider">{h}</th>
+                  <th key={h} className="px-6 py-3 text-left text-xs font-semibold text-espresso-400 uppercase tracking-wider">{h}</th>
                 ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-charcoal-50">
+            <tbody className="divide-y divide-cream-50">
               {categories.map(c => {
                 const count = products.filter(p => p.category_id === c.id).length
                 return (
-                  <tr key={c.id} className="hover:bg-charcoal-50/50 transition-colors">
+                  <tr key={c.id} className="hover:bg-cream-50/50 transition-colors">
                     <td className="px-6 py-4 text-2xl">{c.icon}</td>
-                    <td className="px-6 py-4 text-sm font-semibold text-charcoal-800">{c.name}</td>
-                    <td className="px-6 py-4 text-sm text-charcoal-500">{count} produk</td>
+                    <td className="px-6 py-4 text-sm font-semibold text-espresso-800">{c.name}</td>
+                    <td className="px-6 py-4 text-sm text-cream-500">{count} produk</td>
                     <td className="px-6 py-4">
                       <div className="flex gap-2">
                         <BtnEdit onClick={() => openEdit(c)} />
@@ -55,7 +55,7 @@ export default function CategoriesPanel({ categories, products, onAdd, onUpdate,
                 )
               })}
               {!categories.length && (
-                <tr><td colSpan={4} className="px-6 py-10 text-center text-charcoal-400 text-sm">Belum ada kategori.</td></tr>
+                <tr><td colSpan={4} className="px-6 py-10 text-center text-espresso-400 text-sm">Belum ada kategori.</td></tr>
               )}
             </tbody>
           </table>
@@ -67,7 +67,7 @@ export default function CategoriesPanel({ categories, products, onAdd, onUpdate,
           title={editId ? 'Edit Kategori' : 'Tambah Kategori'}
           onClose={() => setModal(false)}
           footer={<>
-            <button onClick={() => setModal(false)} className="text-sm font-medium text-charcoal-500 px-4 py-2">Batal</button>
+            <button onClick={() => setModal(false)} className="text-sm font-medium text-cream-500 px-4 py-2">Batal</button>
             <BtnPrimary onClick={handleSave} disabled={saving}>
               {saving ? 'Menyimpan...' : 'Simpan'}
             </BtnPrimary>

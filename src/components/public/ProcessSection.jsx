@@ -1,9 +1,9 @@
 const DEFAULT_STEPS = [
-  { icon:'📞', title:'Reservasi',        desc:'Hubungi kami via WhatsApp atau telepon untuk reservasi meja, paket acara, atau pertanyaan menu.' },
-  { icon:'📋', title:'Pilih Paket',      desc:'Pilih dari menu reguler, paket spesial, atau custom catering untuk acara Anda.' },
-  { icon:'✅', title:'Konfirmasi',        desc:'Tim kami akan konfirmasi ketersediaan dan detail pesanan dalam waktu singkat.' },
-  { icon:'🍽️', title:'Nikmati Sajian',   desc:'Datang dan nikmati sajian hangat kami, atau tunggu pengiriman ke lokasi Anda.' },
-  { icon:'⭐', title:'Beri Ulasan',       desc:'Ceritakan pengalaman Anda. Masukan Anda membantu kami terus berkembang.' },
+  { icon: '📞', title: 'Reservasi', desc: 'Hubungi kami via WhatsApp atau telepon untuk reservasi meja, paket acara, atau pertanyaan menu.' },
+  { icon: '📋', title: 'Pilih Paket', desc: 'Pilih dari menu reguler, paket spesial, atau custom catering untuk acara Anda.' },
+  { icon: '✅', title: 'Konfirmasi', desc: 'Tim kami akan konfirmasi ketersediaan dan detail pesanan dalam waktu singkat.' },
+  { icon: '🍽️', title: 'Nikmati Sajian', desc: 'Datang dan nikmati sajian hangat kami, atau tunggu pengiriman ke lokasi Anda.' },
+  { icon: '⭐', title: 'Beri Ulasan', desc: 'Ceritakan pengalaman Anda. Masukan Anda membantu kami terus berkembang.' },
 ]
 
 export default function ProcessSection({ settings }) {
@@ -11,9 +11,9 @@ export default function ProcessSection({ settings }) {
   try {
     const parsed = JSON.parse(settings?.process_steps || '[]')
     if (Array.isArray(parsed) && parsed.length > 0) steps = parsed
-  } catch {}
+  } catch { }
 
-  const title    = settings?.process_title    || 'Cara Memesan'
+  const title = settings?.process_title || 'Cara Memesan'
   const subtitle = settings?.process_subtitle || 'Proses yang mudah dan menyenangkan — dari reservasi hingga hidangan tersaji di meja Anda.'
 
   return (
@@ -63,7 +63,6 @@ export default function ProcessSection({ settings }) {
         <div className="mt-14 text-center">
           <div className="inline-flex items-center gap-3 bg-espresso-800 text-cream-100
                          rounded-2xl px-7 py-4 shadow-lg">
-            <span className="text-2xl">☕</span>
             <p className="text-sm font-medium">
               Mulai dari WhatsApp — tim kami siap melayani Anda dengan hangat!
             </p>

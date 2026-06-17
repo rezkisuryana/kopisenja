@@ -78,7 +78,7 @@ export default function ImageUploader({
 
   return (
     <div className="space-y-2">
-      {label && <p className="text-xs font-semibold text-charcoal-700">{label}</p>}
+      {label && <p className="text-xs font-semibold text-espresso-700">{label}</p>}
 
       <div
         className={cls(
@@ -86,9 +86,9 @@ export default function ImageUploader({
           ASPECT[aspectRatio] || ASPECT.video,
           isEmpty
             ? drag
-              ? 'border-copper-400 bg-copper-50 border-dashed'
-              : 'border-dashed border-charcoal-300 bg-charcoal-50 hover:border-copper-400 hover:bg-copper-50/50 cursor-pointer'
-            : 'border-charcoal-200',
+              ? 'border-caramel-400 bg-caramel-50 border-dashed'
+              : 'border-dashed border-espresso-300 bg-cream-50 hover:border-caramel-400 hover:bg-caramel-50/50 cursor-pointer'
+            : 'border-cream-200',
           disabled && 'opacity-60 pointer-events-none'
         )}
         onDragOver={e => { e.preventDefault(); setDrag(true) }}
@@ -114,15 +114,15 @@ export default function ImageUploader({
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-4 pointer-events-none">
             <div className={cls(
               'w-12 h-12 rounded-2xl flex items-center justify-center',
-              drag ? 'bg-copper-100' : 'bg-charcoal-100'
+              drag ? 'bg-caramel-100' : 'bg-cream-100'
             )}>
-              <Upload size={20} className={drag ? 'text-copper-600' : 'text-charcoal-400'} />
+              <Upload size={20} className={drag ? 'text-caramel-600' : 'text-espresso-400'} />
             </div>
             <div className="text-center">
-              <p className="text-sm font-semibold text-charcoal-600">
+              <p className="text-sm font-semibold text-espresso-600">
                 {drag ? 'Lepas untuk upload' : 'Klik atau drag & drop'}
               </p>
-              <p className="text-xs text-charcoal-400 mt-0.5">{hint}</p>
+              <p className="text-xs text-espresso-400 mt-0.5">{hint}</p>
             </div>
           </div>
         )}
@@ -133,7 +133,7 @@ export default function ImageUploader({
             <button
               type="button"
               onClick={e => { e.stopPropagation(); inputRef.current?.click() }}
-              className="bg-white text-charcoal-800 text-xs font-semibold px-3 py-2 rounded-xl flex items-center gap-1.5 hover:bg-copper-500 hover:text-white transition-colors shadow-lg">
+              className="bg-white text-espresso-800 text-xs font-semibold px-3 py-2 rounded-xl flex items-center gap-1.5 hover:bg-caramel-500 hover:text-white transition-colors shadow-lg">
               <Upload size={13} /> Ganti Foto
             </button>
             <button
@@ -222,7 +222,7 @@ export function MultiImageUploader({
 
   return (
     <div className="space-y-2">
-      {label && <p className="text-xs font-semibold text-charcoal-700">{label}</p>}
+      {label && <p className="text-xs font-semibold text-espresso-700">{label}</p>}
 
       <div className="grid grid-cols-3 gap-3">
         {slots.map((url, i) => (
@@ -231,8 +231,8 @@ export function MultiImageUploader({
               className={cls(
                 'relative aspect-square rounded-xl overflow-hidden border-2 transition-all',
                 url
-                  ? 'border-charcoal-200'
-                  : 'border-dashed border-charcoal-300 bg-charcoal-50 hover:border-copper-400 hover:bg-copper-50/50 cursor-pointer'
+                  ? 'border-cream-200'
+                  : 'border-dashed border-espresso-300 bg-cream-50 hover:border-caramel-400 hover:bg-caramel-50/50 cursor-pointer'
               )}
               onClick={() => !url && openPicker(i)}
             >
@@ -243,7 +243,7 @@ export function MultiImageUploader({
                     <button
                       type="button"
                       onClick={e => { e.stopPropagation(); openPicker(i) }}
-                      className="bg-white text-charcoal-800 p-2 rounded-lg hover:bg-copper-500 hover:text-white transition-colors shadow">
+                      className="bg-white text-espresso-800 p-2 rounded-lg hover:bg-caramel-500 hover:text-white transition-colors shadow">
                       <Upload size={13} />
                     </button>
                     <button
@@ -256,8 +256,8 @@ export function MultiImageUploader({
                 </>
               ) : (
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
-                  <ImageIcon size={20} className="text-charcoal-300" />
-                  <span className="text-xs text-charcoal-400 font-medium">Foto {i + 1}</span>
+                  <ImageIcon size={20} className="text-espresso-300" />
+                  <span className="text-xs text-espresso-400 font-medium">Foto {i + 1}</span>
                 </div>
               )}
 
@@ -277,7 +277,7 @@ export function MultiImageUploader({
         ))}
       </div>
 
-      <p className="text-xs text-charcoal-400">
+      <p className="text-xs text-espresso-400">
         Klik slot kosong untuk upload. Rasio 1:1 (square) disarankan. Maks. 5MB/foto.
       </p>
 

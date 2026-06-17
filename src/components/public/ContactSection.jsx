@@ -5,10 +5,10 @@ import { supabase } from '../../lib/supabase'
 
 export default function ContactSection({ settings }) {
   const INIT = { name: '', phone: '', need: '', message: '' }
-  const [form,     setForm]     = useState(INIT)
-  const [loading,  setLoading]  = useState(false)
-  const [success,  setSuccess]  = useState(false)
-  const [error,    setError]    = useState('')
+  const [form, setForm] = useState(INIT)
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
 
   async function handleSubmit() {
     if (!form.name.trim() || !form.phone.trim()) {
@@ -22,11 +22,11 @@ export default function ContactSection({ settings }) {
     const { error: dbError } = await supabase
       .from('messages')
       .insert({
-        name:    form.name.trim(),
-        phone:   form.phone.trim(),
-        need:    form.need  || null,
+        name: form.name.trim(),
+        phone: form.phone.trim(),
+        need: form.need || null,
         message: form.message.trim() || null,
-        status:  'unread',
+        status: 'unread',
       })
 
     setLoading(false)
@@ -55,10 +55,10 @@ export default function ContactSection({ settings }) {
   }
 
   const contactItems = [
-    { icon: <MapPin size={18} />,  label: 'Lokasi',          value: settings?.address      || '—' },
-    { icon: <Phone size={18} />,   label: 'WhatsApp / Telp', value: settings?.phone_display || '—' },
-    { icon: <Mail size={18} />,    label: 'Email',           value: settings?.email         || '—' },
-    { icon: <Clock size={18} />,   label: 'Jam Buka',        value: settings?.hours         || '—' },
+    { icon: <MapPin size={18} />, label: 'Lokasi', value: settings?.address || '—' },
+    { icon: <Phone size={18} />, label: 'WhatsApp / Telp', value: settings?.phone_display || '—' },
+    { icon: <Mail size={18} />, label: 'Email', value: settings?.email || '—' },
+    { icon: <Clock size={18} />, label: 'Jam Buka', value: settings?.hours || '—' },
   ]
 
   return (
@@ -168,7 +168,7 @@ export default function ContactSection({ settings }) {
                          flex items-center justify-center gap-2">
               {loading
                 ? <><Loader2 size={16} className="animate-spin" /> Mengirim...</>
-                : <>Kirim & Chat WhatsApp ☕</>}
+                : <>Kirim & Chat WhatsApp </>}
             </button>
 
             <p className="text-center text-xs text-espresso-400">

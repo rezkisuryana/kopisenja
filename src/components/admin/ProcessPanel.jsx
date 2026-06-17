@@ -104,29 +104,29 @@ export default function ProcessPanel({ settings, onSaveMany }) {
           action={
             <button
               onClick={addStep}
-              className="flex items-center gap-1.5 text-sm font-semibold text-copper-600 hover:text-copper-500 transition-colors">
+              className="flex items-center gap-1.5 text-sm font-semibold text-caramel-600 hover:text-caramel-500 transition-colors">
               <Plus size={15} /> Tambah Langkah
             </button>
           }
         />
 
-        <div className="divide-y divide-charcoal-100">
+        <div className="divide-y divide-cream-100">
           {steps.map((step, i) => (
-            <div key={i} className="p-5 flex gap-4 items-start group hover:bg-charcoal-50/40 transition-colors">
+            <div key={i} className="p-5 flex gap-4 items-start group hover:bg-cream-50/40 transition-colors">
 
               {/* Step number */}
               <div className="flex flex-col items-center gap-1 flex-shrink-0 pt-1">
-                <div className="w-7 h-7 rounded-full bg-copper-500 text-white text-xs font-bold flex items-center justify-center shadow-sm">
+                <div className="w-7 h-7 rounded-full bg-caramel-500 text-white text-xs font-bold flex items-center justify-center shadow-sm">
                   {i + 1}
                 </div>
                 {/* Move up/down */}
                 <div className="flex flex-col gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button onClick={() => moveStep(i, -1)} disabled={i === 0}
-                    className="text-charcoal-400 hover:text-charcoal-700 disabled:opacity-25 transition-colors p-0.5">
+                    className="text-espresso-400 hover:text-espresso-700 disabled:opacity-25 transition-colors p-0.5">
                     <ChevronUp size={13} />
                   </button>
                   <button onClick={() => moveStep(i, 1)} disabled={i === steps.length - 1}
-                    className="text-charcoal-400 hover:text-charcoal-700 disabled:opacity-25 transition-colors p-0.5">
+                    className="text-espresso-400 hover:text-espresso-700 disabled:opacity-25 transition-colors p-0.5">
                     <ChevronDown size={13} />
                   </button>
                 </div>
@@ -162,7 +162,7 @@ export default function ProcessPanel({ settings, onSaveMany }) {
               {/* Delete */}
               <button
                 onClick={() => removeStep(i)}
-                className="flex-shrink-0 mt-6 p-1.5 rounded-lg text-charcoal-300 hover:text-red-500 hover:bg-red-50 transition-all opacity-0 group-hover:opacity-100">
+                className="flex-shrink-0 mt-6 p-1.5 rounded-lg text-espresso-300 hover:text-red-500 hover:bg-red-50 transition-all opacity-0 group-hover:opacity-100">
                 <Trash2 size={15} />
               </button>
             </div>
@@ -170,16 +170,16 @@ export default function ProcessPanel({ settings, onSaveMany }) {
         </div>
 
         {/* Preview mini */}
-        <div className="border-t border-charcoal-100 p-5 bg-charcoal-50/50">
-          <p className="text-xs font-semibold text-charcoal-400 mb-3 uppercase tracking-wider">Preview</p>
+        <div className="border-t border-cream-100 p-5 bg-cream-50/50">
+          <p className="text-xs font-semibold text-espresso-400 mb-3 uppercase tracking-wider">Preview</p>
           <div className="flex flex-wrap gap-3">
             {steps.map((step, i) => (
-              <div key={i} className="flex items-center gap-2 bg-white border border-charcoal-200 rounded-xl px-3 py-2 shadow-sm">
-                <span className="w-6 h-6 rounded-full bg-copper-500 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+              <div key={i} className="flex items-center gap-2 bg-white border border-cream-200 rounded-xl px-3 py-2 shadow-sm">
+                <span className="w-6 h-6 rounded-full bg-caramel-500 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
                   {i + 1}
                 </span>
                 <span className="text-lg">{step.icon}</span>
-                <span className="text-xs font-semibold text-charcoal-700 whitespace-nowrap">{step.title}</span>
+                <span className="text-xs font-semibold text-espresso-700 whitespace-nowrap">{step.title}</span>
               </div>
             ))}
           </div>

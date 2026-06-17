@@ -20,16 +20,16 @@ export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState('all')
 
   if (sLoading) return (
-    <div className="min-h-screen flex items-center justify-center bg-charcoal-50">
+    <div className="min-h-screen flex items-center justify-center bg-cream-50">
       <div className="text-center">
-        <div className="w-8 h-8 border-2 border-copper-500 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
-        <p className="text-sm text-charcoal-400">Memuat website...</p>
+        <div className="w-8 h-8 border-2 border-caramel-500 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
+        <p className="text-sm text-espresso-400">Memuat website...</p>
       </div>
     </div>
   )
 
   return (
-    <div className="min-h-screen bg-charcoal-50">
+    <div className="min-h-screen bg-cream-50">
       <Navbar settings={settings} />
       <HeroSection settings={settings} />
       <AboutSection settings={settings} />

@@ -64,48 +64,48 @@ export default function ProductsPanel({ products, categories, onAdd, onUpdate, o
         />
 
         {/* Search */}
-        <div className="px-6 py-3 border-b border-charcoal-100">
-          <div className="flex items-center gap-2 bg-charcoal-50 border border-charcoal-200 rounded-xl px-3.5 py-2 w-72">
-            <Search size={15} className="text-charcoal-400" />
+        <div className="px-6 py-3 border-b border-cream-100">
+          <div className="flex items-center gap-2 bg-cream-50 border border-cream-200 rounded-xl px-3.5 py-2 w-72">
+            <Search size={15} className="text-espresso-400" />
             <input value={query} onChange={e => setQuery(e.target.value)}
               placeholder="Cari produk..."
-              className="bg-transparent outline-none text-sm text-charcoal-800 placeholder-charcoal-400 w-full" />
+              className="bg-transparent outline-none text-sm text-espresso-800 placeholder-espresso-400 w-full" />
           </div>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-charcoal-100">
+              <tr className="border-b border-cream-100">
                 {['Foto', 'Nama Produk', 'Kategori', 'Harga', 'Badge', 'Status', 'Aksi'].map(h => (
-                  <th key={h} className="px-5 py-3 text-left text-xs font-semibold text-charcoal-400 uppercase tracking-wider whitespace-nowrap">{h}</th>
+                  <th key={h} className="px-5 py-3 text-left text-xs font-semibold text-espresso-400 uppercase tracking-wider whitespace-nowrap">{h}</th>
                 ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-charcoal-50">
+            <tbody className="divide-y divide-cream-50">
               {visible.map(p => (
-                <tr key={p.id} className="hover:bg-charcoal-50/50 transition-colors">
+                <tr key={p.id} className="hover:bg-cream-50/50 transition-colors">
                   {/* Thumbnail */}
                   <td className="px-5 py-3">
-                    <div className="w-12 h-12 rounded-xl overflow-hidden bg-gradient-to-br from-copper-100 to-copper-50 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-xl overflow-hidden bg-gradient-to-br from-caramel-100 to-caramel-50 flex items-center justify-center flex-shrink-0">
                       {p.image_url
                         ? <img src={p.image_url} alt="" className="w-full h-full object-cover" />
                         : <span className="text-xl">{p.icon || '📦'}</span>}
                     </div>
                   </td>
                   <td className="px-5 py-3">
-                    <p className="text-sm font-semibold text-charcoal-800">{p.name}</p>
-                    <p className="text-xs text-charcoal-400 mt-0.5 line-clamp-1">{p.description}</p>
+                    <p className="text-sm font-semibold text-espresso-800">{p.name}</p>
+                    <p className="text-xs text-espresso-400 mt-0.5 line-clamp-1">{p.description}</p>
                   </td>
-                  <td className="px-5 py-3 text-sm text-charcoal-500 whitespace-nowrap">{p.categories?.name || '—'}</td>
+                  <td className="px-5 py-3 text-sm text-cream-500 whitespace-nowrap">{p.categories?.name || '—'}</td>
                   <td className="px-5 py-3 whitespace-nowrap">
-                    <span className="text-sm font-semibold text-charcoal-800">{fmtPrice(p.price)}</span>
-                    {p.orig_price > 0 && <span className="text-xs text-charcoal-400 line-through ml-2">{fmtPrice(p.orig_price)}</span>}
+                    <span className="text-sm font-semibold text-espresso-800">{fmtPrice(p.price)}</span>
+                    {p.orig_price > 0 && <span className="text-xs text-espresso-400 line-through ml-2">{fmtPrice(p.orig_price)}</span>}
                   </td>
                   <td className="px-5 py-3">
                     {p.badge
-                      ? <span className="text-xs font-bold uppercase px-2 py-0.5 rounded bg-copper-100 text-copper-700">{p.badge}</span>
-                      : <span className="text-charcoal-300 text-xs">—</span>}
+                      ? <span className="text-xs font-bold uppercase px-2 py-0.5 rounded bg-caramel-100 text-caramel-700">{p.badge}</span>
+                      : <span className="text-espresso-300 text-xs">—</span>}
                   </td>
                   <td className="px-5 py-3"><Badge status={p.status} /></td>
                   <td className="px-5 py-3">
@@ -117,7 +117,7 @@ export default function ProductsPanel({ products, categories, onAdd, onUpdate, o
                 </tr>
               ))}
               {!visible.length && (
-                <tr><td colSpan={7} className="px-6 py-10 text-center text-charcoal-400 text-sm">Tidak ada produk.</td></tr>
+                <tr><td colSpan={7} className="px-6 py-10 text-center text-espresso-400 text-sm">Tidak ada produk.</td></tr>
               )}
             </tbody>
           </table>
@@ -130,7 +130,7 @@ export default function ProductsPanel({ products, categories, onAdd, onUpdate, o
           title={editId ? 'Edit Produk' : 'Tambah Produk'}
           onClose={() => setModal(false)}
           footer={<>
-            <button onClick={() => setModal(false)} className="text-sm font-medium text-charcoal-500 hover:text-charcoal-800 px-4 py-2">Batal</button>
+            <button onClick={() => setModal(false)} className="text-sm font-medium text-cream-500 hover:text-espresso-800 px-4 py-2">Batal</button>
             <BtnPrimary onClick={handleSave} disabled={saving}>
               {saving ? 'Menyimpan...' : 'Simpan Produk'}
             </BtnPrimary>
@@ -193,7 +193,7 @@ export default function ProductsPanel({ products, categories, onAdd, onUpdate, o
             </FormGroup>
           </div>
 
-          <p className="text-xs text-charcoal-400 bg-charcoal-50 border border-charcoal-200 rounded-xl p-3">
+          <p className="text-xs text-espresso-400 bg-cream-50 border border-cream-200 rounded-xl p-3">
             💡 <strong>Tip:</strong> Jika foto diupload, icon emoji tidak akan ditampilkan di website. Foto prioritas lebih tinggi dari icon.
           </p>
         </Modal>

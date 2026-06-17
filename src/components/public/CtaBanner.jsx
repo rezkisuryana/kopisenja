@@ -52,7 +52,7 @@ export default function CtaBanner({ settings }) {
             onClick={() => openWA(settings?.whatsapp, 'Halo Kopi Senja! Saya ingin reservasi meja. Apakah tersedia?')}
             className="bg-espresso-700 hover:bg-espresso-600 text-cream-50 font-semibold px-8 py-4
                        rounded-full transition-all hover:-translate-y-0.5 text-sm shadow-lg">
-            ☕ Reservasi via WhatsApp
+            Reservasi via WhatsApp
           </button>
           <button onClick={() => scrollTo('products')}
             className={`font-semibold px-8 py-4 rounded-full transition-colors text-sm border

@@ -23,24 +23,24 @@ export default function OverviewPanel({ products, categories, faqs }) {
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-charcoal-100">
+              <tr className="border-b border-cream-100">
                 {['', 'Nama', 'Kategori', 'Harga', 'Status'].map(h => (
-                  <th key={h} className="px-6 py-3 text-left text-xs font-semibold text-charcoal-400 uppercase tracking-wider">{h}</th>
+                  <th key={h} className="px-6 py-3 text-left text-xs font-semibold text-espresso-400 uppercase tracking-wider">{h}</th>
                 ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-charcoal-50">
+            <tbody className="divide-y divide-cream-50">
               {recent.map(p => (
-                <tr key={p.id} className="hover:bg-charcoal-50/50 transition-colors">
+                <tr key={p.id} className="hover:bg-cream-50/50 transition-colors">
                   <td className="px-6 py-3 text-2xl">{p.icon}</td>
-                  <td className="px-6 py-3 text-sm font-semibold text-charcoal-800">{p.name}</td>
-                  <td className="px-6 py-3 text-sm text-charcoal-500">{p.categories?.name || '—'}</td>
-                  <td className="px-6 py-3 text-sm font-semibold text-charcoal-800">{fmtPrice(p.price)}</td>
+                  <td className="px-6 py-3 text-sm font-semibold text-espresso-800">{p.name}</td>
+                  <td className="px-6 py-3 text-sm text-cream-500">{p.categories?.name || '—'}</td>
+                  <td className="px-6 py-3 text-sm font-semibold text-espresso-800">{fmtPrice(p.price)}</td>
                   <td className="px-6 py-3"><Badge status={p.status} /></td>
                 </tr>
               ))}
               {!products.length && (
-                <tr><td colSpan={5} className="px-6 py-10 text-center text-charcoal-400 text-sm">Belum ada produk.</td></tr>
+                <tr><td colSpan={5} className="px-6 py-10 text-center text-espresso-400 text-sm">Belum ada produk.</td></tr>
               )}
             </tbody>
           </table>

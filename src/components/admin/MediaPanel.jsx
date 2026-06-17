@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import { Save, Image, LayoutTemplate, BookOpen, Megaphone } from 'lucide-react'
-import ImageUploader from './ImageUploader'
-import { BUCKETS, deleteImage } from '../../lib/storage'
+import { Save, LayoutTemplate, BookOpen, Megaphone } from 'lucide-react'
+import ImageUploader, { MultiImageUploader } from './ImageUploader'
+import { BUCKETS } from '../../lib/storage'
 import { BtnPrimary, Panel, PanelHeader } from './AdminUI'
 import toast from 'react-hot-toast'
 
 /**
  * MediaPanel — kelola semua gambar section:
  *  - Hero Section: 3 foto grid
- *  - About Section: 3 foto (1 besar + 2 kecil)
+ *  - About Section: 1 foto portrait
  *  - CTA Cover: 1 foto background
  */
 export default function MediaPanel({ settings, onSaveMany }) {
@@ -17,7 +17,7 @@ export default function MediaPanel({ settings, onSaveMany }) {
     try { return JSON.parse(settings?.hero_images || '[]') } catch { return [] }
   })
 
-  // About images — stored as JSON array in settings.about_images
+  // About images — stored as JSON array, tapi hanya dipakai 1 slot pertama
   const [aboutImages, setAboutImages] = useState(() => {
     try { return JSON.parse(settings?.about_images || '[]') } catch { return [] }
   })
@@ -53,13 +53,13 @@ export default function MediaPanel({ settings, onSaveMany }) {
         <PanelHeader
           title={
             <span className="flex items-center gap-2">
-              <LayoutTemplate size={16} className="text-copper-500" />
+              <LayoutTemplate size={16} className="text-caramel-500" />
               Foto Hero Section
             </span>
           }
         />
         <div className="p-6 space-y-4">
-          <p className="text-sm text-charcoal-500 leading-relaxed">
+          <p className="text-sm text-espresso-500 leading-relaxed">
             Upload 3 foto untuk ditampilkan di grid kanan hero section. Foto pertama akan lebih besar (tall card).
             Jika tidak ada foto, akan tampil icon emoji sebagai fallback.
           </p>
@@ -74,29 +74,29 @@ export default function MediaPanel({ settings, onSaveMany }) {
           />
 
           {/* Preview mini */}
-          <div className="bg-charcoal-800 rounded-2xl p-4">
-            <p className="text-xs text-white/50 mb-3 font-medium">Preview Layout Hero</p>
+          <div className="bg-espresso-800 rounded-2xl p-4">
+            <p className="text-xs text-cream-300 mb-3 font-medium">Preview Layout Hero</p>
             <div className="grid grid-cols-2 gap-2 h-40">
               <div className="row-span-2 rounded-xl overflow-hidden bg-white/10 flex items-center justify-center">
                 {heroImages[0]
                   ? <img src={heroImages[0]} alt="" className="w-full h-full object-cover" />
-                  : <span className="text-3xl opacity-40">🫕</span>}
+                  : <span className="text-3xl opacity-40">☕</span>}
               </div>
               <div className="rounded-xl overflow-hidden bg-white/10 flex items-center justify-center">
                 {heroImages[1]
                   ? <img src={heroImages[1]} alt="" className="w-full h-full object-cover" />
-                  : <span className="text-2xl opacity-40">🔥</span>}
+                  : <span className="text-2xl opacity-40">🍰</span>}
               </div>
               <div className="rounded-xl overflow-hidden bg-white/10 flex items-center justify-center">
                 {heroImages[2]
                   ? <img src={heroImages[2]} alt="" className="w-full h-full object-cover" />
-                  : <span className="text-2xl opacity-40">🍽️</span>}
+                  : <span className="text-2xl opacity-40">🌿</span>}
               </div>
             </div>
           </div>
 
           <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-xl p-3 text-xs leading-relaxed">
-            <strong>Tips foto Hero:</strong> Gunakan foto landscape peralatan restoran, dapur, atau suasana resto.
+            <strong>Tips foto Hero:</strong> Gunakan foto suasana kafe, menu unggulan, atau interior yang hangat.
             Resolusi minimal 800×800px. Rasio 1:1 paling optimal.
           </div>
         </div>
@@ -155,16 +155,16 @@ export default function MediaPanel({ settings, onSaveMany }) {
         <PanelHeader
           title={
             <span className="flex items-center gap-2">
-              <Megaphone size={16} className="text-copper-500" />
+              <Megaphone size={16} className="text-caramel-500" />
               Foto Cover CTA Banner
             </span>
           }
         />
         <div className="p-6 space-y-4">
-          <p className="text-sm text-charcoal-500 leading-relaxed">
-            Upload foto background untuk CTA banner (section ajakan hubungi kami).
+          <p className="text-sm text-espresso-500 leading-relaxed">
+            Upload foto background untuk CTA banner (section ajakan reservasi).
             Foto akan di-overlay dengan warna gelap agar teks tetap terbaca.
-            Jika tidak diisi, akan tampil background gradasi gelap.
+            Jika tidak diisi, akan tampil background gradasi cream lembut.
           </p>
 
           <ImageUploader
@@ -182,16 +182,16 @@ export default function MediaPanel({ settings, onSaveMany }) {
           {ctaCover && (
             <div className="relative rounded-2xl overflow-hidden h-32">
               <img src={ctaCover} alt="" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-charcoal-900/65" />
+              <div className="absolute inset-0 bg-espresso-900/65" />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-4">
-                <p className="text-xs font-semibold uppercase tracking-widest text-copper-400 mb-1">Preview CTA</p>
-                <p className="font-display text-lg font-bold">Siap Upgrade <span className="text-copper-400">Dapur Restoran</span> Anda?</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-caramel-400 mb-1">Preview CTA</p>
+                <p className="font-display text-lg font-bold">Rasakan Kehangatan <span className="text-caramel-400">Kopi Senja</span></p>
               </div>
             </div>
           )}
 
           <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-xl p-3 text-xs leading-relaxed">
-            <strong>Tips foto CTA:</strong> Gunakan foto suasana restoran yang ramai, dapur yang bersih, atau peralatan yang tertata rapi.
+            <strong>Tips foto CTA:</strong> Gunakan foto suasana kafe yang ramai, meja yang tertata, atau menu andalan.
             Resolusi minimal 1200×600px. Foto akan otomatis di-dimming agar teks terbaca.
           </div>
         </div>
