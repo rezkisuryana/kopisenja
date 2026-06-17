@@ -34,8 +34,8 @@ yarn-error.log*
 .env*
 
 #file sql
-MIGRATION_FIX.sql*
-MIGRATION_KOPISINGLY.sql*
+MIGRATION_FIX.sql
+MIGRATION_KOPISINGLY.sql
 
 # vercel
 .vercel
