@@ -31,39 +31,45 @@ export default function ProcessSection({ settings }) {
           {/* Connector line desktop */}
           <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-cream-300 to-transparent" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4">
+          {/* Mobile (default): 2 kolom bersebelahan, compact.
+              sm: tetap 2 kolom tapi lebih lega.
+              lg: 5 kolom sebaris penuh seperti desktop. */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-x-3 gap-y-8 sm:gap-x-6 sm:gap-y-10 lg:gap-4">
             {steps.map((step, i) => (
               <div key={i} className="flex flex-col items-center text-center group">
                 {/* Icon circle */}
-                <div className="relative mb-5 z-10">
-                  <div className="w-20 h-20 rounded-full bg-cream-100 border-2 border-cream-200
+                <div className="relative mb-3 sm:mb-5 z-10">
+                  <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-cream-100 border-2 border-cream-200
                                   flex items-center justify-center shadow-sm
                                   group-hover:border-caramel-400 group-hover:bg-caramel-50
                                   transition-all duration-300">
-                    <span className="text-3xl">{step.icon}</span>
+                    <span className="text-xl sm:text-3xl">{step.icon}</span>
                   </div>
-                  <span className="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-espresso-700
-                                   text-cream-50 text-xs font-bold flex items-center justify-center shadow-md">
+                  <span className="absolute -top-1 -right-1 sm:-top-1.5 sm:-right-1.5
+                                   w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-espresso-700
+                                   text-cream-50 text-[10px] sm:text-xs font-bold
+                                   flex items-center justify-center shadow-md">
                     {i + 1}
                   </span>
                 </div>
 
-                <h3 className="font-display font-semibold text-espresso-800 text-base mb-2">{step.title}</h3>
-                <p className="text-espresso-400 text-xs leading-relaxed max-w-[180px]">{step.desc}</p>
-
-                {i < steps.length - 1 && (
-                  <div className="lg:hidden mt-6 text-cream-300 text-2xl">↓</div>
-                )}
+                <h3 className="font-display font-semibold text-espresso-800 text-xs sm:text-base mb-1.5 sm:mb-2 px-1">
+                  {step.title}
+                </h3>
+                <p className="text-espresso-400 text-[11px] sm:text-xs leading-relaxed max-w-[140px] sm:max-w-[180px]">
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Bottom hint */}
-        <div className="mt-14 text-center">
-          <div className="inline-flex items-center gap-3 bg-espresso-800 text-cream-100
-                         rounded-2xl px-7 py-4 shadow-lg">
-            <p className="text-sm font-medium">
+        <div className="mt-12 sm:mt-14 text-center">
+          <div className="inline-flex items-center gap-2 sm:gap-3 bg-espresso-800 text-cream-100
+                         rounded-2xl px-5 sm:px-7 py-3 sm:py-4 shadow-lg">
+            <span className="text-xl sm:text-2xl">☕</span>
+            <p className="text-xs sm:text-sm font-medium">
               Mulai dari WhatsApp — tim kami siap melayani Anda dengan hangat!
             </p>
           </div>
