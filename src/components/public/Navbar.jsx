@@ -52,7 +52,7 @@ export default function Navbar({ settings }) {
           </Link>
         </div>
 
-        <button className="md:hidden p-2 rounded-lg hover:bg-cream-200 text-espresso-700"
+        <button className="md:hidden p-2 rounded-lg hover:bg-cream-200 text-caramel-600"
           onClick={() => setOpen(!open)}>
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
