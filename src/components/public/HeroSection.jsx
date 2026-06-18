@@ -45,14 +45,18 @@ export default function HeroSection({ settings }) {
             Tempat di mana waktu terasa lebih lambat dan rasa selalu terkenang.
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-row flex-wrap gap-3 sm:gap-4">
             <button onClick={() => scrollTo('products')}
-              className="bg-caramel-400 hover:bg-caramel-300 text-espresso-900 font-semibold px-8 py-3.5 rounded-full transition-all hover:-translate-y-0.5 text-sm shadow-lg">
+              className="flex-1 sm:flex-initial bg-caramel-400 hover:bg-caramel-300 text-espresso-900 font-semibold
+                         px-4 py-2.5 sm:px-8 sm:py-3.5 rounded-full transition-all hover:-translate-y-0.5
+                         text-sm sm:text-sm shadow-lg text-center whitespace-nowrap">
               Lihat Menu
             </button>
             <button
               onClick={() => openWA(settings?.whatsapp, 'Halo Kopi Senja, saya ingin reservasi meja. Apakah tersedia?')}
-              className="bg-white/10 hover:bg-white/20 border border-white/25 text-cream-100 font-semibold px-8 py-3.5 rounded-full transition-colors text-sm backdrop-blur-sm">
+              className="flex-1 sm:flex-initial bg-white/10 hover:bg-white/20 border border-white/25 text-cream-100 font-semibold
+                         px-4 py-2.5 sm:px-8 sm:py-3.5 rounded-full transition-colors
+                         text-sm sm:text-sm backdrop-blur-sm text-center whitespace-nowrap">
               Reservasi Meja →
             </button>
           </div>
